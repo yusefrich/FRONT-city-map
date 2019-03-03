@@ -1,0 +1,194 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Cormorant:300,300i,400,400i,500,500i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+b {
+    font-weight: 700;
+}
+
+
+h2 {
+    float: left;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 14px;
+    position: relartive;
+    z-index: 3;
+    margin-top: 30px
+}
+
+h2 span {
+    font-family: 'Cormorant', serif;
+    display: block;
+    font-size: 65px;
+    text-transform: none;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-weight: 300;
+    border-bottom: 2px dashed white;
+}
+
+h2 a {
+    color: #fff;
+    font-weight: bold;
+}
+
+body {
+
+    background: #24C6DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #514A9D, #24C6DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #514A9D, #24C6DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.head {
+    float: left;
+    width: 100%;
+}
+
+.search-box {
+    width: 90%;
+    margin: 0 auto 40px;
+    box-shadow: 10px 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+.listing-block {
+    background: #fff;
+    height: 500px;
+    padding-top: 20px;
+    overflow-y: scroll;
+}
+
+.slimScrollDiv {
+    width: 41% !important;
+}
+
+.media {
+    background: #fff;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.media img {
+    width: 200px;
+    margin: 0;
+    height: 136px;
+}
+
+.media-body {
+    border: 1px solid #bcbcbc;
+    border-left: 0;
+    height: 136px;
+}
+
+.media .price {
+    float: left;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    color: #4765AB;
+}
+
+.media .price small {
+    display: block;
+    font-size: 17px;
+    color: #232323;
+}
+
+.media .stats {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.media .stats span {
+    float: left;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.media .stats span i {
+    margin-right: 7px;
+    color: #4765AB;
+}
+
+.media .address {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #888;
+}
+
+.media .fav-box {
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    top: 4px;
+    color: #E74C3C;
+}
+
+.map-box {
+    background-color: #A3CCFF;
+}
+
+.full {
+    height: 100%;
+    width: 100%;
+
+}
+
+.border-right {
+    width: 50%;
+}
+
+.scrollable {
+    height: 600px;
+    /* or any value */
+    overflow-y: auto;
+}
+
+.side-menu {
+    font-family: 'Quicksand', sans-serif;
+    color: #8395a7;
+}
+
+.side-menu p {
+    margin: 0px !important;
+    font-size: 21px;
+    text-transform: capitalize;
+}
+
+.side-menu a {
+    color: #576574;
+    font-weight: 300;
+    font-size: 16px;
+
+}
+
+.side-menu h3 {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.list-group-hover .list-group-item:hover {
+    background-color: red;
+}
+
+.footer {
+    font-size: 20px;
+    /*
+    font-family: 'Cormorant', serif;
+    */
+    font-family: 'Quicksand', sans-serif;
+
+    color: #2196F3;
+    height: 250px;
+    background-color: #FBF9FF;
+}
+.footer h2{
+    font-weight: 100;
+}
