@@ -77,7 +77,9 @@ class App extends Component {
     var myMarkers = [];
     /** the program loops the venue state placing markers */
     this.state.venues.map(place => {
-      var contentString ='Nome: ' + `${place.venue.name}`;
+      var contentString ='<p>Name: ' + `${place.venue.name}`+ '</p>' +
+      '<p>Address: ' + `${place.venue.location.address}` + '</p>';
+
       var id = place.venue.id;
       // every marker
       var marker = new window.google.maps.Marker({
@@ -166,7 +168,7 @@ class App extends Component {
           <form onSubmit={this.handleSubmit}>
 
           <div className ="input-group mb-3">
-            <input type="text" onChange={this.handleInputChange} name='searchTerm' className ="form-control" placeholder="Tipo de local" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+            <input type="text" onChange={this.handleInputChange} name='searchTerm' className ="form-control" placeholder="Local type" aria-label="Recipient's username" aria-describedby="button-addon2"/>
             <div className ="input-group-append">
               <button className ="btn btn-outline-primary" type="submit" value="Submit" id="button-addon2">pesquisar</button>
             </div>
