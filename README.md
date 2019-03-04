@@ -30,7 +30,7 @@ git clone https://github.com/yusefrich/UP--PT--REACT-city-map
 ```
 * Open the project directory and run the above code to run the server
 ```
-npm start
+yarn start
 ```
 * the application will be running in the http://localhost:3000/
 

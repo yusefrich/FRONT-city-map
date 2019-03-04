@@ -1,11 +1,8 @@
 import React, {
   Component
 } from 'react';
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
-import { debug } from 'util';
 
 class App extends Component {
 
@@ -79,7 +76,6 @@ class App extends Component {
     this.state.venues.map(place => {
       var contentString ='<p>Name: ' + `${place.venue.name}`+ '</p>' +
       '<p>Address: ' + `${place.venue.location.address}` + '</p>';
-
       var id = place.venue.id;
       // every marker
       var marker = new window.google.maps.Marker({
@@ -142,7 +138,7 @@ class App extends Component {
     const {searchTerm} = this.state;
     //iterating over venues to show the names and info in the sidemenu
     const venueList = this.state.venues.map(place => 
-      <a href="" onClick={this.handleClickOnSidebarVenue} className =" list-group-item list-group-hover list-group-item-action " role="tab" key={place.venue.id} id={place.venue.id}>{place.venue.name}</a>
+      <a href="#" onClick={this.handleClickOnSidebarVenue} className =" list-group-item list-group-hover list-group-item-action " role="tab" key={place.venue.id} id={place.venue.id}>{place.venue.name}</a>
 
     );
     //the render return
