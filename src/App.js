@@ -17,6 +17,7 @@ class App extends Component {
       searchTerm: null,
       map: null,
       infowindow: null,
+      currentMarkerInFocus: null,
       markers: []
     };
   }
@@ -52,7 +53,8 @@ class App extends Component {
         venues: response.data.response.groups[0].items
       }, this.initMap());
     }).catch(error => {
-      console.log("ERROR GETTING THE FOURSQUARE API DATA " + error)
+      console.log( error + " on requesting foursquare api data");
+      alert(error + ' on requesting foursquare api data');
     });
 
   }
@@ -116,8 +118,19 @@ class App extends Component {
     event.preventDefault();
     this.state.markers.map( marker =>{
       if(marker.myPlaceId === event.target.id){
+        //showing marker infowindow 
         this.state.infowindow.setContent(marker.myIndoWindowContent);
         this.state.infowindow.open(this.state.map, marker.myMarker);
+        //setting marker animation 
+        if (this.state.currentMarkerInFocus !== null) {
+          this.state.currentMarkerInFocus.setAnimation(null);
+        } 
+        
+        marker.myMarker.setAnimation(window.google.maps.Animation.BOUNCE);
+        this.setState({
+          currentMarkerInFocus: marker.myMarker
+        });
+        
       }
     });
   }
@@ -129,7 +142,7 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value
-    })
+    });
 
   }
   
@@ -144,18 +157,12 @@ class App extends Component {
     //the render return
     return ( 
     <main>
-      <section className="head">
-    <div className="container">
-      <h2 className="text-center"><span>João Pessoa Places</span></h2>
-    </div>
-  </section>
+      <Title/>
   <div className="clearfix"></div>
 
   <section className="search-box">
     <div className="container-fluid p-0">
       <div className="d-flex" id="wrapper">
-
-
 
       <div className ="bg-light border-right side-menu scrollable p-3" id="sidebar-wrapper">
 
@@ -171,18 +178,10 @@ class App extends Component {
           </div>
           </form>
           
-          <div className ="list-group list-group-flush" id="list-tab" role="tablist">
-            {venueList}
-          
-          </div>
-      </div>
-
-      <div className ="full" id="page-content-wrapper">
-
-        <div id = "map" > </div> 
+          <PlacesList list={venueList}/>
 
       </div>
-
+      <Map/>
       </div>
 
     </div>
@@ -194,12 +193,52 @@ class App extends Component {
   }
 }
 
+class PlacesList extends React.Component{
+
+  render(){
+    const list = this.props.list;
+    return(
+      <div className ="list-group list-group-flush" id="list-tab" role="tablist">
+        {list}
+      </div>
+    );
+  }
+}
+
+class Map extends React.Component{
+  render(){
+    return(
+      <div className ="full" id="page-content-wrapper">
+        <div id = "map" > </div> 
+      </div>
+    )
+  }
+}
+
+class Title extends React.Component{
+  render(){
+    return (
+      <section className="head">
+      <div className="container">
+        <h2 className="text-center"><span>João Pessoa Places</span></h2>
+      </div>
+    </section>
+      )
+  }
+}
+
 function googleMapsApiScript(url) {
   var index = window.document.getElementsByTagName("script")[0];
   var script = window.document.createElement("script");
   script.src = url;
   script.async = true;
   script.defer = true;
+  script.onerror = function (){
+    console.log('error on requesting google maps api data');
+    alert('error on requesting google maps api data');
+  };
   index.parentNode.insertBefore(script, index);
 }
+
+
 export default App;

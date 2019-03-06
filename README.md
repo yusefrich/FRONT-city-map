@@ -39,8 +39,6 @@ yarn start
 
 * **yusef richard** - *application short description*
 
-
-
 # Authors data
 
  *NAME*: Yusef Richard de Oliveira Alves <p>
@@ -49,6 +47,9 @@ yarn start
  * science computer on FPB  <p>
  *EMAIL*:yusef.rick@gmail.com <p>
 
+# Third party used tools
 
-
+* [google maps Javascript Api](https://developers.google.com/maps/documentation/javascript/tutorial)
+* [Foursquare Api](https://developer.foursquare.com/)
+* [Axio HTTP client](https://github.com/axios/axios)
 
